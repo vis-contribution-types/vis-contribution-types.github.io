@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="types-container">
+    <div class="types-index">
+        <ul>
+            {% for item in site.contribution_types %}
+                <li {% if item.url == page.url %}class="active"{% endif %}><a href="{{ item.url | relative_url }}">{{item.name}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="type-examples">
+        <div class="type-header">{{ page.name | escape }}</div>
+        <div class="type-description">{{ page.description}}</div>
+
+        <div class="example-header">Example Papers</div>
+        <div class="examples">
+            {{ content }}
+        </div>
+    </div>
+</div>

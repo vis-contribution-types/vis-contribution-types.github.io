@@ -1,0 +1,111 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+.footer-col-0 {
+  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-4 {
+  width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+  width:         calc(50% - (#{$spacing-unit} / 2));
+}
+
+$color-border: #c2c2c2;
+$color-selected: #dadada;
+$color-indexbg: #f2f2f2;
+
+.site-title { 
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-size: 20px; 
+  font-weight: 600; 
+  line-height: 54px; 
+  letter-spacing: -1px; 
+  margin-bottom: 0; 
+  float: left; 
+}
+
+.footer-heading {
+  display: none;
+}
+
+.type-name {
+  font-weight: 500;    
+  padding-top: 7px;
+}
+
+@media (min-width: 900px) {
+  .types-container {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .types-index {
+      position: fixed;
+  }
+
+  .type-examples {
+      flex: 1 1;
+      margin-left: 230px;
+
+      .type-header {
+        font-weight: 600;    
+        font-size: large;
+      }     
+
+      .type-description {
+        font-size: medium;
+        margin-top: 5px;
+      }
+
+      .example-header {
+        font-weight: 500;
+        margin-top: 25px;
+      }     
+
+      .examples {
+        margin-top: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+      }
+  }
+}
+
+.types-index {
+  width: 170px;
+  border: 1px solid transparentize($color-border, 0.5);
+  background: transparentize($color-indexbg, 0.9);
+  border-radius: 2px;
+  padding: 5px;
+
+  ul {
+    li {
+      font-size: small;
+      margin: 1px 0;
+      display: block;
+
+      a {
+          padding: 2px 5px;
+          display: block;
+      }
+    }
+
+    list-style-type: none;
+    margin: 0;
+
+    & > ul {
+      li {
+          padding-left: 2em;
+          font-size: 0.9em;
+      }
+    }
+
+    li.active {
+      background: transparentize($color-selected, 0.6);
+      font-weight: 600;
+    }
+  }
+}
